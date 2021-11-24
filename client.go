@@ -130,7 +130,7 @@ func (c *client) do(method string, resource string, payload string, authNeeded b
 		nonce := time.Now().Unix() * 1000
 
 		// All of the signature elemnts must be parsed as strings in this array.
-		preSignatura := []string{strconv.Itoa(int(nonce)), req.URL.String(), method, payloadHash}
+		preSignatura := []string{fmt.Sprintf("%d", nonce), req.URL.String(), method, payloadHash}
 		signaturePayload := strings.Join(preSignatura, "")
 
 		mac := hmac.New(sha512.New, []byte(c.apiSecret))
