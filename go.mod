@@ -1,4 +1,4 @@
-module github.com/toorop/go-bittrex
+module github.com/PierreRAFFA/go-bittrex
 
 go 1.15
 
